@@ -1,0 +1,43 @@
+#top-bar {
+    background: rgba(31, 31, 31, .9);
+    /* fallback for old browsers */
+    border: none;
+    box-shadow: 2px 0 1px #4F4F4F;
+}
+
+#bottom-bar p {
+    color: #cc2b5e;
+    font-weight: bold;
+    margin: 25px 0 0 0;
+    transition: all .5s;
+}
+
+.eq {
+    background: #cc2b5e;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #cc2b5e, #753a88);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #cc2b5e, #753a88);
+    height: 1px;
+    width: 5px;
+    transition: all .5s;
+    align-self: flex-end;
+    margin: 0 1px 0 0;
+}
+
+#vol-overlay {
+    position: absolute;
+    background: #cc2b2a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #753a88, #cc2b2a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #753a88, #cc2b2a);
+    height: 8px;
+    width: 75px;
+    transition: all .3s;
+    align-self: flex-end;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}

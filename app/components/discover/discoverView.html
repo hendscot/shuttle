@@ -1,0 +1,23 @@
+<div class='container-fluid'>
+    <div class='jumbo jumbotron'>
+        <div class='display-3'>
+            Discover your next favorite podcast
+        </div>
+        <p class='lead'>
+            Browse Trending Podcasts or Search the Entire Catalog
+        </p>
+    </div>
+    <div ng-repeat='pod in _disc.pods'>
+        <div ng-if="$index % 6 == 0" class="clearfix"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class='card discover mb-3 text-center'>
+                <img class='card-img-top' ng-src="{{ pod.img }}">
+                <div class='card-block'>
+                    <h4 class='card-title'>{{ pod.name }}</h4>
+                    <p class='card-text'>{{ pod.summary }}</p>
+                    <div ng-click='_disc.subscribe($event)' img='{{pod.img}}' url='{{pod.url}}' title='{{pod.title}}' class='btn btn-primary'>Subscribe</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

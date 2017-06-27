@@ -1,0 +1,42 @@
+<div class='container-fluid'>
+    <div class='jumbo jumbotron'>
+        <div class='media'>
+            <div class='media-left'>
+                <img class='media-object' ng-src='{{_epi.img}}'>
+            </div>
+            <div class='media-body'>
+                <h1 class='media-heading'>{{ _epi.title }}</h1>
+                <p>{{ _epi.defaultDescription }}</p>
+                <div ng-click='_epi.remove()' class='btn btn-danger'><a href='#'>Unsubscribe</a></div>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-lg-6'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h4 id='head'> {{ _epi.firstTitle }} </h4>
+                </div>
+                <div id='desc' class='panel-body'>
+                    {{ _epi.firstDesc }}
+                </div>
+            </div>
+        </div>
+        <div class='col-lg-6'>
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h4>Episodes</h4>
+                </div>
+                <ul class='list-group'>
+                    <li class='list-group-item episodes' ng-click='_epi.updatePanel($event)' ng-repeat='episode in _epi.episodes' url='{{episode.url}}' title='{{episode.title}}' desc='{{episode.desc}}'>
+                        {{ episode.title }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class='row'>
+        <div class='col-lg-6'>
+        </div>
+    </div>
+</div>

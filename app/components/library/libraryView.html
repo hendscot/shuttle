@@ -1,0 +1,14 @@
+<div class='container-fluid'>
+    <div class='row'>
+        <div ng-repeat='pod in _lib.pods'>
+            <div ng-if="$index % 6 == 0" class="clearfix"></div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <a href="#episodes">
+                    <div ng-click="_lib.set(pod.uri, pod.img)" class='card library mb-3 text-center face'>
+                        <img class='card-img-top' ng-src="{{ pod.img }}">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
