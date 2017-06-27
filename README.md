@@ -8,4 +8,10 @@ Subscribe to your favorite podcasts available on iTunes and store them locally f
 
 Screenshots
 
+<img src ='https://github.com/hendscot/shuttle/blob/master/assets/pod1.png'>
+
+<img src = 'https://github.com/hendscot/shuttle/blob/master/assets/pod2.png'>
+
+<img src = 'https://github.com/hendscot/shuttle/blob/master/assets/pod3.png'>
+
 
