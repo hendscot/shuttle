@@ -1,0 +1,16 @@
+<div class='container-fluid'>
+    <h1>{{_search.results}} results for {{_search.query}}</h1>
+    <div ng-repeat='pod in _search.pods'>
+        <div ng-if="$index % 6 == 0" class="clearfix"></div>
+        <div class="col-lg-2 col-md-4 col-sm-6">
+            <div class='card discover mb-3 text-center'>
+                <img class='card-img-top' ng-src="{{ pod.img }}">
+                <div class='card-block'>
+                    <h4 class='card-title'>{{ pod.name }}</h4>
+                    <p class='card-text'>{{ pod.summary }}</p>
+                    <div ng-click='_search.subscribe($event)' img='{{pod.img}}' url='{{pod.url}}' title='{{pod.title}}' class='btn btn-primary'>Subscribe</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

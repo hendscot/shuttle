@@ -17,6 +17,11 @@
             templateUrl: 'app/components/episodes/episodesView.html',
             controller: 'episodesController',
             controllerAs: '_epi'
+        })
+        .when('/search', {
+            templateUrl: 'app/components/search/searchView.html',
+            controller: 'searchController',
+            controllerAs: '_search'
         });
     })
 })();
