@@ -35,6 +35,9 @@
                     document.getElementById('start-time'),
                     document.getElementById('end-time'),
                     document.getElementById('progress-bar'));
+                player.volume = 1;
+                var volBar = document.getElementById('vol');
+                var volOvr = document.getElementById('vol-overlay');
 
                 /***********LISTENERS!*************** */
                 // player
@@ -44,6 +47,18 @@
                 player.addEventListener('timeupdate', function() {
                     vis.update(player.currentTime, player.duration);
                 });
+                volBar.addEventListener('mousedown', function(e) {
+                    var rect = e.target.getBoundingClientRect();
+                    var diff = (Math.abs(Math.floor(volOvr.style.width.split('px')[0] - (e.pageX - rect.left)) / 100));
+                    (player.volume + diff > 1) ? 1: player.volume += diff;
+                    volOvr.style.width = (((e.pageX - rect.left)) + 'px');
+                })
+                volOvr.addEventListener('mousedown', function(e) {
+                    var rect = e.target.getBoundingClientRect();
+                    var diff = (Math.abs(Math.floor(volOvr.style.width.split('px')[0] - (e.pageX - rect.left)) / 100));
+                    (player.volume - diff < 0) ? 0: player.volume -= diff;
+                    volOvr.style.width = (((e.pageX - rect.left)) + 'px');
+                })
             }
         }
 

@@ -130,3 +130,29 @@ function unsubscribe() {
     db.save();
     router.routeTo(glo.renderer, lib.build);
 }
+
+
+(function() {
+    $.ajax({
+        url: 'http://dicksautoparts.com/products.xml',
+        type: 'GET',
+        success: function(data) {
+            console.log(data);
+            $(data).find('entry').each(function(entry) {
+                console.log($(this).find('link').attr('href'));
+                $.ajax({
+                    url: $(this).find('link').attr('href'),
+                    type: 'GET',
+                    success: function(page) {
+                        console.log(page);
+                    },
+                    error: function(err) {}
+                });
+            })
+
+        },
+        error: function() {
+
+        }
+    })
+});

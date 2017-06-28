@@ -1,8 +1,8 @@
 (function() {
     angular.module('shuttle')
-        .controller('navigationController', [NavigationController])
+        .controller('navigationController', ['navigationService', NavigationController])
 
-    function NavigationController() {
+    function NavigationController(navigationService) {
         var self = this;
         self.words = document.getElementsByClassName('nav-wd');
         self.select = function(elem) {
@@ -12,6 +12,8 @@
             }
             elem.className = 'nav-wd act';
         }
+        self.close = navigationService.shutdown;
+        self.min = navigationService.minimize;
     }
 
 })();
