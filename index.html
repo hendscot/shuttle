@@ -63,7 +63,7 @@
                         <div class="input-group">
                             <input id='searchbar' ng-model='_searchBar.query' type="text" class="form-control" placeholder='search'>
                             <div class="input-group-btn">
-                                <div id='search-btn' class="btn btn-default" type="submit"><i class="fa fa-rocket"></i></div>
+                                <div id='search-btn' class="btn btn-default" ng-click='_searchBar.search()' type="submit"><i class="fa fa-rocket"></i></div>
                             </div>
                         </div>
                     </form>

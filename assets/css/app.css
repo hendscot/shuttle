@@ -16,9 +16,18 @@ li {
     border-bottom-color: red;
 }
 
-a {
+.btn a {
     color: white;
     text-decoration: none;
+}
+
+.btn a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+h3>a {
+    color: #753a88;
 }
 
 

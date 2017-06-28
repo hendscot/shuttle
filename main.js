@@ -10,6 +10,47 @@ const url = require('url')
 const ipc = require('electron').ipcMain
 const dialog = require('electron').dialog
 
+const Menu = electron.Menu
+const Tray = electron.Tray
+
+let appIcon;
+
+ipc.on('put-in-tray', function(event) {
+    const iconName = 'rocket.png'
+    const iconPath = path.join(__dirname, iconName)
+    appIcon = new Tray(iconPath)
+    const contextMenu = Menu.buildFromTemplate([{
+            label: 'Restore',
+            click: function() {
+                appIcon.destroy();
+                mainWindow.maximize();
+            },
+        },
+        {
+            label: 'Exit',
+            click: function() {
+                appIcon.destroy();
+                mainWindow.close();
+            }
+        }
+    ])
+    appIcon.setToolTip('Shuttle');
+    appIcon.setContextMenu(contextMenu)
+    appIcon.on('click', function() {
+        appIcon.destroy();
+        mainWindow.maximize();
+    })
+})
+
+ipc.on('remove-tray', function() {
+    appIcon.destroy()
+    mainWindow.maximize();
+})
+
+app.on('window-all-closed', function() {
+    if (appIcon) appIcon.destroy()
+})
+
 var fs = require('fs');
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.

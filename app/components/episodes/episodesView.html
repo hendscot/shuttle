@@ -5,7 +5,7 @@
                 <img class='media-object' ng-src='{{_epi.img}}'>
             </div>
             <div class='media-body'>
-                <h1 class='media-heading'>{{ _epi.title }}</h1>
+                <h1 class='media-heading'>{{ _epi.headTitle }}</h1>
                 <p>{{ _epi.defaultDescription }}</p>
                 <div ng-click='_epi.remove()' class='btn btn-danger'><a href='#'>Unsubscribe</a></div>
             </div>
@@ -15,7 +15,8 @@
         <div class='col-lg-6'>
             <div class='panel panel-default'>
                 <div class='panel-heading'>
-                    <h4 id='head'> {{ _epi.firstTitle }} </h4>
+                    <h4 id='head'> {{ _epi.title }} </h4>
+                    <div ng-click='_epi.loadData()' class='btn btn-success'>Launch <i class='fa fa-play'></i></div>
                 </div>
                 <div id='desc' class='panel-body'>
                     {{ _epi.firstDesc }}

@@ -6,8 +6,12 @@
         var self = this;
         self.query = '';
         self.search = function() {
-            searchService.searchPods(self.query);
-            $location.path('search');
+            if (self.query) {
+                searchService.searchPods(self.query);
+                $location.path('search');
+            } else {
+                $location.path('discover');
+            }
         }
         self.subscribe = function(elem) {
             elem = elem.currentTarget;

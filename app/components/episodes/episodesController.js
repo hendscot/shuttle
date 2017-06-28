@@ -1,31 +1,27 @@
 (function() {
     angular.module('shuttle')
-        .controller('episodesController', ['$scope', 'episodesService', 'selectedService', 'playerService', '$q', EpisodesController])
+        .controller('episodesController', ['episodesService', 'selectedService', 'playerService', '$q', EpisodesController])
 
-    function EpisodesController($scope, episodesService, selectedService, playerService) {
+    function EpisodesController(episodesService, selectedService, playerService) {
         let self = this;
         self.uri = selectedService.getSelectedId();
         self.img = selectedService.getSelectedImg();
-        self.updatePanel = function(elem) {
-            var elem = elem.currentTarget;
-            var desc = elem.getAttribute('desc'),
-                title = elem.getAttribute('title'),
-                url = elem.getAttribute('url');
-            $('#desc').text(desc);
-            $('#head').text(title);
-            playerService.load(url, self.img, title);
-        };
+        self.url;
         self.episodes = [];
         self.defaultDescription;
-        self.firstTitle;
         self.firstDesc;
         self.title;
+        self.headTitle;
+        self.loadData = function() {
+            playerService.load(self.url, self.img, self.title);
+        }
         self.remove = function() {
             episodesService.deleteEpisode(self.uri);
         }
         episodesService.getEpisodes(self.uri).then(function(data) {
-            self.title = $(data).find('title').first().text();
-            self.firstTitle = $(data).find('item').first().find('title').text();
+            self.headTitle = $(data).find('title').first().text();
+            self.title = $(data).find('item').first().find('title').text();
+            self.url = $(data).find('enclosure').first().attr('url');
             self.defaultDescription = $(data).find('description').first().text();
             let desc;
             let first = 1;
@@ -45,6 +41,14 @@
                 });
             })
         })
+        self.updatePanel = function(elem) {
+            var elem = elem.currentTarget;
+            var desc = elem.getAttribute('desc');
+            self.title = elem.getAttribute('title');
+            self.url = elem.getAttribute('url');
+            $('#desc').text(desc);
+            $('#head').text(self.title);
+        };
     }
 
 })();

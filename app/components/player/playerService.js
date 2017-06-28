@@ -23,7 +23,7 @@
                 track.innerHTML = title;
                 play.setAttribute('state', 'on')
                 player.load(source);
-
+                handleAudio();
             },
             init: function() {
                 player = document.getElementById('player');
