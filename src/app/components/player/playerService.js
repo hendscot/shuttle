@@ -5,6 +5,7 @@
     var play;
     var album;
     var source;
+    var progress;
     var track;
     var playBtn = 'fa fa-play';
     var pausBtn = 'fa fa-pause';
@@ -31,10 +32,11 @@
                 album = document.getElementById('album');
                 source = document.getElementById('source');
                 track = document.getElementById('track-text');
+                progress = document.getElementById('progress-bar');
                 vis.init(document.getElementsByClassName('eq'),
                     document.getElementById('start-time'),
                     document.getElementById('end-time'),
-                    document.getElementById('progress-bar'));
+                    progress);
                 player.volume = 1;
                 var volBar = document.getElementById('vol');
                 var volOvr = document.getElementById('vol-overlay');
@@ -59,6 +61,7 @@
                     (player.volume - diff < 0) ? 0: player.volume -= diff;
                     volOvr.style.width = (((e.pageX - rect.left)) + 'px');
                 })
+                progress.addEventListener('click', seek);
             }
         }
 
@@ -82,6 +85,11 @@
             play.className = playBtn;
             player.pause();
             vis.pause();
+        }
+
+        function seek(e) {
+            player.currentTime = (e.offsetX / this.offsetWidth) * player.duration;
+            progress.value = percent / 100;
         }
     }
 
