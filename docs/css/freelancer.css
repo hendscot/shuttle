@@ -72,19 +72,19 @@ header .intro-text .skills {
   border: none;
 }
 .navbar-custom .navbar-brand {
-  color: white;
+  color: #753a88;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: white;
+  color: #753a88;
 }
 .navbar-custom .navbar-nav {
   letter-spacing: 1px;
 }
 .navbar-custom .navbar-nav li a {
-  color: white;
+  color: #753a88;
 }
 .navbar-custom .navbar-nav li a:hover {
   color: #753a88;
@@ -94,25 +94,25 @@ header .intro-text .skills {
   color: #753a88;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: white;
+  color: #753a88;
   background: #753a88;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: white;
+  color: #753a88;
   background: #753a88;
 }
 .navbar-custom .navbar-toggle {
-  color: white;
+  color: #753a88;
   text-transform: uppercase;
   font-size: 10px;
-  border-color: white;
+  border-color: #753a88;
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
   background-color: #753a88;
-  color: white;
+  color: #753a88;
   border-color: #753a88;
 }
 @media (min-width: 768px) {
@@ -269,7 +269,7 @@ footer .footer-below {
   background-color: #233140;
 }
 .btn-outline {
-  color: white;
+  color: #753a88;
   font-size: 20px;
   border: solid 2px white;
   background: transparent;
@@ -281,8 +281,8 @@ footer .footer-below {
 .btn-outline:active,
 .btn-outline.active {
   color: #18BC9C;
-  background: white;
-  border: solid 2px white;
+  background: #753a88;
+  border: solid 2px #753a88;
 }
 .btn-primary {
   color: white;
@@ -328,8 +328,8 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-success {
   color: white;
-  background-color: #18BC9C;
-  border-color: #18BC9C;
+  background-color: #753a88;
+  border-color: #753a88;
   font-weight: 700;
 }
 .btn-success:hover,
@@ -457,7 +457,7 @@ fieldset[disabled] .btn-success.active {
   position: absolute;
   top: -40px;
   left: 0px;
-  color: white;
+  color: #753a88;
   border-right: 1px solid white;
   border-bottom: 1px solid white;
   border-bottom-right-radius: 8px;
@@ -469,7 +469,7 @@ fieldset[disabled] .btn-success.active {
   position: absolute;
   left: 0px;
   top: 0px;
-  background: #18BC9C;
+  background: #753a88;
   outline: 0;
   transition: top 0.1s ease-in, background 0.5s linear;
 }
