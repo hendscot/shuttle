@@ -27,15 +27,15 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  color: #753a88;
+  color: #FFFFFF;
 }
 .img-centered {
   margin: 0 auto;
 }
 header {
   text-align: center;
-  background: #FFFFFF;
-  color: #753a88;
+  background: #753a88;
+  color: #FFFFFF;
 }
 header .container {
   padding-top: 100px;
@@ -87,20 +87,20 @@ header .intro-text .skills {
   color: #753a88;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: #753a88;
+  color: white;
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
-  color: #753a88;
+  color: white;
 }
 .navbar-custom .navbar-nav li.active a {
-  color: #753a88;
+  color: white;
   background: #753a88;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
-  color: #753a88;
+  color: #white;
   background: #753a88;
 }
 .navbar-custom .navbar-toggle {
