@@ -154,6 +154,9 @@ section.success {
     padding-top: 75px;
   }
 }
+#portfolio {
+  background: #2C3E50;
+}
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
