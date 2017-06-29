@@ -27,6 +27,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+  color: #753a88;
 }
 .img-centered {
   margin: 0 auto;
@@ -94,13 +95,13 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-nav li.active a {
   color: white;
-  background: #18BC9C;
+  background: #753a88;
 }
 .navbar-custom .navbar-nav li.active a:hover,
 .navbar-custom .navbar-nav li.active a:focus,
 .navbar-custom .navbar-nav li.active a:active {
   color: white;
-  background: #18BC9C;
+  background: #753a88;
 }
 .navbar-custom .navbar-toggle {
   color: white;
@@ -110,9 +111,9 @@ header .intro-text .skills {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #18BC9C;
+  background-color: #753a88;
   color: white;
-  border-color: #18BC9C;
+  border-color: #753a88;
 }
 @media (min-width: 768px) {
   .navbar-custom {
