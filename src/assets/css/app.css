@@ -336,6 +336,7 @@ progress {
 }
 
 progress::-webkit-progress-value {
+    opacity: .8;
     background: #cc2b2a;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #753a88, #cc2b2a);
@@ -345,6 +346,14 @@ progress::-webkit-progress-value {
     transition: all .3s;
     cursor: pointer;
     position: absolute;
+}
+
+progress[value]::-webkit-progress-value::before {
+    content: '80%';
+    position: absolute;
+    left: 0;
+    size: 50px;
+    color: white;
 }
 
 .vol-cont {
