@@ -17,11 +17,12 @@
             play: function() {
                 handleAudio();
             },
-            load: function(audioSrc, img, title) {
+            load: function(audioSrc, img, title, artist) {
                 stopAudio();
                 source.src = audioSrc;
                 album.src = img;
-                track.innerHTML = title;
+                track.setAttribute('track', title);
+                track.setAttribute('artist', artist);
                 play.setAttribute('state', 'on')
                 player.load(source);
                 handleAudio();
@@ -49,13 +50,16 @@
                 player.addEventListener('timeupdate', function() {
                     vis.update(player.currentTime, player.duration);
                 });
+                setInterval(toggleText, 6000);
                 volBar.addEventListener('mousedown', function(e) {
+                    console.log(player.volume = (e.offsetX / this.offsetWidth) * 1);
                     var rect = e.target.getBoundingClientRect();
                     var diff = (Math.abs(Math.floor(volOvr.style.width.split('px')[0] - (e.pageX - rect.left)) / 100));
                     (player.volume + diff > 1) ? 1: player.volume += diff;
                     volOvr.style.width = (((e.pageX - rect.left)) + 'px');
                 })
                 volOvr.addEventListener('mousedown', function(e) {
+                    console.log(player.volume = (e.offsetX / this.offsetWidth) * 1);
                     var rect = e.target.getBoundingClientRect();
                     var diff = (Math.abs(Math.floor(volOvr.style.width.split('px')[0] - (e.pageX - rect.left)) / 100));
                     (player.volume - diff < 0) ? 0: player.volume -= diff;
@@ -88,8 +92,17 @@
         }
 
         function seek(e) {
-            player.currentTime = (e.offsetX / this.offsetWidth) * player.duration;
-            progress.value = percent / 100;
+            let percent = (e.offsetX / this.offsetWidth);
+            player.currentTime = percent * player.duration;
+        }
+
+        function toggleText() {
+            let artist = track.getAttribute('artist');
+            if (track.innerHTML === artist) {
+                track.innerHTML = track.getAttribute('track');
+            } else {
+                track.innerHTML = artist;
+            }
         }
     }
 

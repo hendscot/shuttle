@@ -34,6 +34,7 @@ ipc.on('put-in-tray', function(event) {
             }
         }
     ])
+
     appIcon.setToolTip('Shuttle');
     appIcon.setContextMenu(contextMenu)
     appIcon.on('click', function() {

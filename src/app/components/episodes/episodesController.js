@@ -13,7 +13,7 @@
         self.title;
         self.headTitle;
         self.loadData = function() {
-            playerService.load(self.url, self.img, self.title);
+            playerService.load(self.url, self.img, self.title, self.headTitle);
         }
         self.remove = function() {
             episodesService.deleteEpisode(self.uri);

@@ -326,10 +326,13 @@ progress {
     background: -webkit-linear-gradient(to right, #753a88, #cc2b2a);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #753a88, #cc2b2a);
-    height: 4px;
+    height: 6px;
+    width: 1318px;
     transition: all .3s;
     cursor: pointer;
     position: absolute;
+    z-index: 10;
+    left: -10px;
 }
 
 progress::-webkit-progress-value {
@@ -338,7 +341,7 @@ progress::-webkit-progress-value {
     background: -webkit-linear-gradient(to right, #753a88, #cc2b2a);
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #753a88, #cc2b2a);
-    height: 4px;
+    height: 6px;
     transition: all .3s;
     cursor: pointer;
     position: absolute;
