@@ -2,4 +2,4 @@ title: shuttle
 description: Your new favorite way to podcast
 show_downloads: true
 google_analytics:
-theme: jekyll-theme-slate
+theme: minima
