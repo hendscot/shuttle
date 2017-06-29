@@ -154,7 +154,7 @@ section.success {
     padding-top: 75px;
   }
 }
-#portfolio {
+#portfolio h2{
   color: #2C3E50;
 }
 #portfolio .portfolio-item {
