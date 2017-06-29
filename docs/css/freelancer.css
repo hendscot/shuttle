@@ -66,6 +66,10 @@ header .intro-text .skills {
     font-size: 1.75em;
   }
 }
+
+#about {
+  background: #2C3E50;
+}
 .navbar-custom {
   background: #FFFFFF;
   font-weight: 700;
@@ -87,7 +91,7 @@ header .intro-text .skills {
   color: #753a88;
 }
 .navbar-custom .navbar-nav li a:hover {
-  color: white;
+  color: #753a88;
 }
 .navbar-custom .navbar-nav li a:focus,
 .navbar-custom .navbar-nav li a:active {
@@ -112,7 +116,7 @@ header .intro-text .skills {
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
   background-color: #753a88;
-  color: #753a88;
+  color: white;
   border-color: #753a88;
 }
 @media (min-width: 768px) {
