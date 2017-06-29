@@ -328,6 +328,10 @@ footer .footer-below {
     background-color: #233140;
 }
 
+.fa.fa-rocket {
+    font-size: 75px;
+}
+
 .btn-outline {
     color: white;
     font-size: 20px;
