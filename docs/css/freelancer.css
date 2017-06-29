@@ -34,7 +34,7 @@ h6 {
 }
 header {
   text-align: center;
-  background: #753a88;
+  background: #2C3E50;
   color: #FFFFFF;
 }
 header .container {
@@ -409,6 +409,7 @@ fieldset[disabled] .btn-success.active {
 .portfolio-modal .modal-content h2 {
   margin: 0;
   font-size: 3em;
+  color: #2C3E50;
 }
 .portfolio-modal .modal-content img {
   margin-bottom: 30px;
