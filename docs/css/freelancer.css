@@ -84,10 +84,24 @@ header .intro-text .skills {
     background: #2C3E50;
 }
 
+#contact h2{
+  color: #753a88;
+}
+
+.btn.btn-lg.btn-outline.inactive {
+  background: gray;
+}
+.btn.btn-lg.btn-outline.inactive:hover {
+
+}
 .navbar-custom {
     background: #FFFFFF;
     font-weight: 700;
     border: none;
+}
+
+.fa.fa-rocket.nav-icon {
+  font-size: 24px;
 }
 
 .navbar-custom .navbar-brand {
