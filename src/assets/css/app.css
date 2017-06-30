@@ -37,22 +37,52 @@ h3>a {
 /********Nav words are main navigation categories (Library, Discover..*/
 
 .nav-wd {
-    margin: 0 20px 0 20px;
+    margin: 15px 25px 0 0;
     transition: all .5s;
     cursor: pointer;
+    font-size: 25px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    transition: all .5s;
+    color: #FFFFFF;
+}
+
+.nav-wd a {
+    text-decoration: none;
+    color: #AFAFAF
+}
+
+.nav-wd a:link {
+    text-decoration: none;
+}
+
+.nav-wd a:visited {
+    text-decoration: none;
+}
+
+.nav-wd a:hover {
+    text-decoration: none;
+}
+
+.nav-wd a:active {
+    text-decoration: none;
 }
 
 .nav-wd.act {
     color: #FFFFFF;
-    font-size: 3rem;
+    border-bottom-color: #cc2b2a;
+    /* fallback for old browsers */
+    border-bottom-color: -webkit-linear-gradient(to right, #753a88, #cc2b2a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    border-bottom-color: linear-gradient(to right, #753a88, #cc2b2a);
+    transition: all .5s;
     /*text-shadow: 1px 1px 1px #EEEEEE;*/
 }
 
 .nav-wd.deact {
-    padding: 11px 0 0 0;
-    color: #AFAFAF;
-    font-size: 2rem;
-    float: left;
+    color: #AFAFAF !important;
+    border-bottom: none;
+    transition: all .5s;
 }
 
 .nav-ptr {
@@ -78,6 +108,10 @@ h3>a {
     z-index: 10;
     width: 25px;
     background-color: rgba(12, 175, 12, .5)
+}
+
+#top-bar {
+    height: 3%;
 }
 
 
@@ -389,12 +423,14 @@ progress[value]::-webkit-progress-value::before {
 }
 
 #searchbar {
+    height: 25px;
     position: absolute;
     left: -250px;
     width: 150px;
 }
 
 #search-btn {
+    height: 25px;
     position: absolute;
     left: -100px;
 }

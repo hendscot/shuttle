@@ -62,7 +62,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
-        frame: false
+        frame: true
     });
     mainWindow.maximize();
     // and load the index.html of the app.
@@ -79,7 +79,20 @@ function createWindow() {
         // when you should delete the corresponding element.
         mainWindow = null
     })
+
+    let popup = new BrowserWindow({
+        width: 600,
+        height: 250,
+        frame: true
+    })
+    popup.focus();
+    popup.loadURL(url.format({
+        pathname: path.join(__dirname, 'api.html'),
+        protocol: 'file',
+        slashes: true
+    }))
 }
+
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
