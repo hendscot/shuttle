@@ -15,6 +15,8 @@ const Tray = electron.Tray
 
 let appIcon;
 
+let popup;
+
 ipc.on('put-in-tray', function(event) {
     const iconName = 'rocket.png'
     const iconPath = path.join(__dirname, iconName)
@@ -46,6 +48,11 @@ ipc.on('put-in-tray', function(event) {
 ipc.on('remove-tray', function() {
     appIcon.destroy()
     mainWindow.maximize();
+})
+
+ipc.on('relocate', function(url) {
+    console.log(url)
+        //popup.loadURL(url);
 })
 
 app.on('window-all-closed', function() {
@@ -80,7 +87,7 @@ function createWindow() {
         mainWindow = null
     })
 
-    let popup = new BrowserWindow({
+    popup = new BrowserWindow({
         width: 600,
         height: 250,
         frame: true

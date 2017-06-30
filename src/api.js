@@ -1,5 +1,6 @@
 (function() {
-    var remote = require('electron').remote;
+    var electron = require('electron');
+    const ipc = electron.ipcRenderer;
     angular.module('api', [])
         .config(['$locationProvider', function($locationProvider) {
             $locationProvider.hashPrefix('');
@@ -9,11 +10,13 @@
         .controller('apiController', ['$http', ApiController]);
 
     function ApiController($http) {
-        $http.defaults.headers.common['client_id'] = 'nprone_trial_zxetIUmeSBPj';
-        $http.defaults.headers.common['response_type'] = 'code';
-        $http.defaults.headers.common['scope'] = 'identity.readonly';
-        $http.get('//api.npr.org/authorization/v2/authorize?').then(function(res) {
-            authWindow.loadURL(authUrl);
+        let addr = 'https://api.npr.org/authorization/v2/authorize?' +
+            'client_id=nprone_trial_zxetIUmeSBPj&' + 'state=eft68jrd3r74fpc7Grni&' +
+            'redirect_uri=http://dev.npr.org/console/application/860&' +
+            'response_type=code&' + 'scope=identity.readonly';
+        $http.get(addr).then(function(res) {
+            console.log(res)
+            ipc.send('relocate', res);
         })
     }
 })();
