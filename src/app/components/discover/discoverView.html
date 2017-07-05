@@ -8,7 +8,7 @@
         </p>
     </div>
     <div ng-repeat='pod in _disc.pods'>
-        <div ng-if="$index % 6 == 0" class="clearfix"></div>
+        <div ng-if="$index % 6 == 0" class="clearfix row trans"></div>
         <div class="col-lg-2 col-md-4 col-sm-6">
             <div class='card discover mb-3 text-center'>
                 <img class='card-img-top' ng-src="{{ pod.img }}">

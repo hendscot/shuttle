@@ -1,6 +1,7 @@
 (function() {
     var electron = require('electron');
     const ipc = electron.ipcRenderer;
+    const remote = electron.remote;
     angular.module('api', [])
         .config(['$locationProvider', function($locationProvider) {
             $locationProvider.hashPrefix('');
@@ -14,9 +15,7 @@
             'client_id=nprone_trial_zxetIUmeSBPj&' + 'state=eft68jrd3r74fpc7Grni&' +
             'redirect_uri=http://dev.npr.org/console/application/860&' +
             'response_type=code&' + 'scope=identity.readonly';
-        $http.get(addr).then(function(res) {
-            console.log(res)
-            ipc.send('relocate', res);
-        })
+        remote.getCurrentWindow().loadURL(addr);
+
     }
 })();

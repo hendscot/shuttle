@@ -4,7 +4,11 @@ body {
     font-family: 'Lato', sans-serif;
     padding-top: 100px;
     font-weight: lighter;
-    background-color: #EFEFEF;
+    background: #cc2b2a;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #753a88, #cc2b2a);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #753a88, #cc2b2a);
 }
 
 h1 {
@@ -26,8 +30,40 @@ li {
     text-decoration: none;
 }
 
+.btn.round {
+    border-radius: 175px;
+    box-shadow: 1px 2px 3px #1F1F1F;
+    text-shadow: 1px 2px 3px #1F1F1F;
+    transition: all .2s;
+    color: #f8f8ff;
+}
+
+.btn.round.queue {
+    background-color: rgba(117, 58, 136, .7);
+}
+
+.btn.round.queue:hover {
+    background-color: rgba(100, 48, 128, .7);
+}
+
+.btn.round:hover {
+    text-shadow: none;
+    transition: all .2s;
+}
+
 h3>a {
     color: #753a88;
+}
+
+#container {
+    margin: -50px 0 0 0;
+    width: 100%;
+    background-color: rgba(31, 31, 31, .7);
+    z-index: 1;
+}
+
+.row.trans {
+    background-color: rgba(31, 31, 31, .7);
 }
 
 
@@ -121,8 +157,9 @@ h3>a {
 /***********MAIN CONTENT WINDOW*************/
 
 #app-render {
-    min-height: 1250px;
+    height: 100%;
     width: 100%;
+    margin: -50px auto;
 }
 
 
@@ -226,11 +263,17 @@ h3>a {
 
 .list-group-item.episodes {
     cursor: pointer;
+    background-color: rgba(31, 31, 31, .4);
+    box-shadow: none;
+    border: none;
+    color: #f8f8ff;
 }
 
 .list-group-item.episodes:hover {
-    background: #753a88;
+    background-color: rgba(117, 58, 136, .7);
     color: #FFFFFF;
+    box-shadow: none;
+    border: none;
 }
 
 .list-group {
@@ -240,6 +283,9 @@ h3>a {
     flex-direction: column;
     overflow-y: scroll;
     color: black;
+    box-shadow: none;
+    border: none;
+    background-color: rgba(31, 31, 31, .7);
 }
 
 #desc {
@@ -269,6 +315,7 @@ h3>a {
 
 .media-left img {
     width: 175px;
+    opacity: 1 !important;
 }
 
 .media {
@@ -276,23 +323,27 @@ h3>a {
 }
 
 .panel-heading {
-    background: #1F1F1F !important;
+    background-color: rgba(31, 31, 31, .2) !important;
     color: #FFFFFF !important;
-    opacity: .8;
+    box-shadow: none;
+    border: none;
 }
 
 .jumbo {
-    background: #1F1F1F !important;
+    background-color: rgba(31, 31, 31, 0);
     color: #FFFFFF !important;
-    opacity: .8;
 }
 
 .panel {
-    box-shadow: 1px 2px 3px #8F8F8F;
+    background-color: rgba(31, 31, 31, .6);
+    color: #f8f8ff !important;
+    z-index: 10;
+    box-shadow: none;
+    border: none;
 }
 
 #bottom-bar {
-    background: #EFEFEF;
+    background-color: rgba(31, 31, 31, 1);
     /* fallback for old browsers */
     border-radius: 2px;
 }
@@ -313,6 +364,8 @@ h3>a {
     transition: all .5s;
     margin: 20px 25px 0 0;
     cursor: pointer;
+    color: #f8f8ff;
+    opacity: .7;
 }
 
 #album {

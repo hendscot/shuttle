@@ -6,6 +6,8 @@
         let self = this;
         self.uri = selectedService.getSelectedId();
         self.img = selectedService.getSelectedImg();
+        document.getElementsByTagName('body')[0].style.backgroundImage = "url('" + self.img + "')";
+        document.getElementsByTagName('body')[0].style.backgroundSize = 'cover';
         self.url;
         self.episodes = [];
         self.defaultDescription;

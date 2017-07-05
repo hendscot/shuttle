@@ -50,10 +50,7 @@ ipc.on('remove-tray', function() {
     mainWindow.maximize();
 })
 
-ipc.on('relocate', function(url) {
-    console.log(url)
-        //popup.loadURL(url);
-})
+
 
 app.on('window-all-closed', function() {
     if (appIcon) appIcon.destroy()
@@ -87,7 +84,7 @@ function createWindow() {
         mainWindow = null
     })
 
-    popup = new BrowserWindow({
+    /*popup = new BrowserWindow({
         width: 600,
         height: 250,
         frame: true
@@ -98,6 +95,9 @@ function createWindow() {
         protocol: 'file',
         slashes: true
     }))
+    popup.webContents.on('will-navigate', function(event, url) {
+        console.log(url);
+    })*/
 }
 
 

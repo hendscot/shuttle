@@ -1,22 +1,23 @@
-<div class='container-fluid'>
-    <div class='jumbo jumbotron'>
-        <div class='media'>
-            <div class='media-left'>
-                <img class='media-object' ng-src='{{_epi.img}}'>
-            </div>
-            <div class='media-body'>
-                <h1 class='media-heading'>{{ _epi.headTitle }}</h1>
-                <p>{{ _epi.defaultDescription }}</p>
-                <div ng-click='_epi.remove()' class='btn btn-danger'><a href='#'>Unsubscribe</a></div>
+<div id='container'>
+    <div class='row trans'>
+        <div class='jumbo jumbotron'>
+            <div class='media'>
+                <div class='media-left'>
+                    <img class='media-object' ng-src='{{_epi.img}}'>
+                </div>
+                <div class='media-body'>
+                    <h1 class='media-heading'>{{ _epi.headTitle }}</h1>
+                    <p>{{ _epi.defaultDescription }}</p>
+                    <div ng-click='_epi.remove()' class='btn btn-danger'><a href='#'>Unsubscribe</a></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class='row'>
         <div class='col-lg-6'>
             <div class='panel panel-default'>
                 <div class='panel-heading'>
                     <h4 id='head'> {{ _epi.title }} </h4>
-                    <div ng-click='_epi.loadData()' class='btn btn-success'>Launch <i class='fa fa-play'></i></div>
+                    <div ng-click='_epi.loadData()' class='btn btn-success round'><i class='fa fa-play'></i></div>
+                    <div ng-click='_epi.queueData()' class='btn queue round'><i class='fa fa-plus'></i></div>
                 </div>
                 <div id='desc' class='panel-body'>
                     {{ _epi.firstDesc }}
@@ -34,10 +35,6 @@
                     </li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class='row'>
-        <div class='col-lg-6'>
         </div>
     </div>
 </div>
