@@ -7,6 +7,9 @@
         let body = document.getElementsByTagName('body')[0];
         self.uri = selectedService.getSelectedId();
         self.img = selectedService.getSelectedImg();
+        self.success = false;
+        self.failed = false;
+        self.index = 0;
         body.style.backgroundImage = "url('" + self.img + "')";
         body.style.backgroundSize = 'cover';
         self.url;
@@ -15,6 +18,14 @@
         self.firstDesc;
         self.title;
         self.headTitle;
+        self.next = function() {
+            if ((self.index + 5) != self.episodes.length)
+                self.index += 5;
+        }
+        self.prev = function() {
+            if ((self.index - 5) >= 0)
+                self.index -= 5;
+        }
         self.loadData = function() {
             playerService.load(self.url, self.img, self.title, self.headTitle);
         }
@@ -22,6 +33,8 @@
             episodesService.deleteEpisode(self.uri);
         }
         episodesService.getEpisodes(self.uri).then(function(data) {
+
+            self.success = true;
             self.headTitle = $(data).find('title').first().text();
             self.title = $(data).find('item').first().find('title').text();
             self.url = $(data).find('enclosure').first().attr('url');
@@ -43,6 +56,8 @@
                     'url': pod.find('enclosure').attr('url'),
                 });
             })
+        }, function(err) {
+            self.failed = true;
         })
         self.updatePanel = function(elem) {
             var elem = elem.currentTarget;

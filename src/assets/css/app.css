@@ -51,11 +51,26 @@ li {
     transition: all .2s;
 }
 
+.btn.select.square {
+    font-size: 12px;
+    background-color: rgba(45, 45, 45, .7);
+    border-radius: 10px;
+    box-shadow: 1px 2px 3px #1F1F1F;
+    text-shadow: 1px 2px 3px #1F1F1F;
+    transition: all .2s;
+    color: #f8f8ff;
+}
+
+.btn.select.square:hover {
+    background-color: rgba(12, 12, 12, .9);
+}
+
 h3>a {
     color: #753a88;
 }
 
 #container {
+    min-height: 820px;
     margin: -50px 0 0 0;
     width: 100%;
     background-color: rgba(31, 31, 31, .7);

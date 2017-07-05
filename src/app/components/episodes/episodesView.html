@@ -1,5 +1,5 @@
 <div id='container'>
-    <div class='row trans'>
+    <div class='row trans' ng-if='_epi.success'>
         <div class='jumbo jumbotron'>
             <div class='media'>
                 <div class='media-left'>
@@ -17,7 +17,7 @@
                 <div class='panel-heading'>
                     <h4 id='head'> {{ _epi.title }} </h4>
                     <div ng-click='_epi.loadData()' class='btn btn-success round'><i class='fa fa-play'></i></div>
-                    <div ng-click='_epi.queueData()' class='btn queue round'><i class='fa fa-plus'></i></div>
+                    <div ng-click='_epi.queueData()' class='btn btn-primary round'><i class='fa fa-plus'></i></div>
                 </div>
                 <div id='desc' class='panel-body'>
                     {{ _epi.firstDesc }}
@@ -28,13 +28,21 @@
             <div class='panel panel-default'>
                 <div class='panel-heading'>
                     <h4>Episodes</h4>
+                    <div ng-click='_epi.prev()' class='btn select square'><i class='fa fa-arrow-left'></i></div>
+                    <div ng-click='_epi.next()' class='btn select square'><i class='fa fa-arrow-right'></i></div>
                 </div>
                 <ul class='list-group'>
-                    <li class='list-group-item episodes' ng-click='_epi.updatePanel($event)' ng-repeat='episode in _epi.episodes | limitTo:5' url='{{episode.url}}' title='{{episode.title}}' desc='{{episode.desc}}'>
+                    <li class='list-group-item episodes' ng-click='_epi.updatePanel($event)' ng-repeat='episode in _epi.episodes | limitTo:5:_epi.index' url='{{episode.url}}' title='{{episode.title}}' desc='{{episode.desc}}'>
                         {{ episode.title }}
                     </li>
                 </ul>
             </div>
+        </div>
+    </div>
+    <div class='row trans' ng-if="_epi.failed">
+        <div class='jumbo jumbotron'>
+            <h1>Resource is currently unavailable.</h1>
+            <p>Please try again later</p>
         </div>
     </div>
 </div>

@@ -6,8 +6,8 @@
 }
 
 #bottom-bar p {
-    color: #cc2b5e;
-    font-weight: bold;
+    color: #F8F8FF;
+    font-weight: light;
     margin: 25px 0 0 0;
     transition: all .5s;
 }
