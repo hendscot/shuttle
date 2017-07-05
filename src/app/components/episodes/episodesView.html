@@ -30,7 +30,7 @@
                     <h4>Episodes</h4>
                 </div>
                 <ul class='list-group'>
-                    <li class='list-group-item episodes' ng-click='_epi.updatePanel($event)' ng-repeat='episode in _epi.episodes' url='{{episode.url}}' title='{{episode.title}}' desc='{{episode.desc}}'>
+                    <li class='list-group-item episodes' ng-click='_epi.updatePanel($event)' ng-repeat='episode in _epi.episodes | limitTo:5' url='{{episode.url}}' title='{{episode.title}}' desc='{{episode.desc}}'>
                         {{ episode.title }}
                     </li>
                 </ul>
