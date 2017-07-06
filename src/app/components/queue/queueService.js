@@ -5,12 +5,14 @@
     function QueueService() {
         var queue = []
         var queueImg;
+        var inQueue;
         return ({
             enqueue: function(podObj) {
                 if (!queue.length) {
                     queueImg.src = podObj.albumArt;
                 }
                 queue.push(podObj)
+                inQueue.innerHTML = queue.length;
             },
             next: function() {
                 if (queue.length) {
@@ -22,13 +24,15 @@
                     } else {
                         queueImg.src = './assets/img/default.jpg';
                     }
+                    inQueue.innerHTML = queue.length;
                     return podObj;
                 } else {
                     return { source: null };
                 }
             },
-            init: function(queueNext) {
+            init: function(queueNext, qAmnt) {
                 queueImg = queueNext;
+                inQueue = qAmnt;
             }
         })
     }

@@ -105,7 +105,7 @@ h3>a {
     transition: all .5s;
     cursor: pointer;
     font-size: 25px;
-    border-bottom-width: 3px;
+    border-bottom-width: 1.5px;
     border-bottom-style: solid;
     transition: all .5s;
     color: #FFFFFF;
@@ -116,29 +116,9 @@ h3>a {
     color: #AFAFAF
 }
 
-.nav-wd a:link {
-    text-decoration: none;
-}
-
-.nav-wd a:visited {
-    text-decoration: none;
-}
-
-.nav-wd a:hover {
-    text-decoration: none;
-}
-
-.nav-wd a:active {
-    text-decoration: none;
-}
-
 .nav-wd.act {
     color: #FFFFFF;
-    border-bottom-color: #cc2b2a;
-    /* fallback for old browsers */
-    border-bottom-color: -webkit-linear-gradient(to right, #753a88, #cc2b2a);
-    /* Chrome 10-25, Safari 5.1-6 */
-    border-bottom-color: linear-gradient(to right, #753a88, #cc2b2a);
+    border-bottom-color: rgba(100, 48, 128, .9);
     transition: all .5s;
     /*text-shadow: 1px 1px 1px #EEEEEE;*/
 }
@@ -513,6 +493,13 @@ progress[value]::-webkit-progress-value::before {
     left: 0;
     size: 50px;
     color: white;
+}
+
+#q-info {
+    color: #F8F8FF;
+    position: relative;
+    left: 45px;
+    top: 25px;
 }
 
 .vol-cont {
