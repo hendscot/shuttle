@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    min-height: 850px;
     padding-top: 100px;
     font-weight: lighter;
     background: #cc2b2a;
@@ -67,6 +68,18 @@ li {
 
 h3>a {
     color: #753a88;
+}
+
+#q-notify {
+    position: absolute;
+    z-index: 10;
+    left: 575px;
+    top: -10px;
+}
+
+#q-img {
+    width: 25px;
+    height: auto;
 }
 
 #container {
@@ -374,13 +387,57 @@ h3>a {
 }
 
 #play {
-    font-size: 30px;
+    font-size: 25px;
     float: left;
     transition: all .5s;
-    margin: 20px 25px 0 0;
+    margin: 20px 15px 0 15px;
     cursor: pointer;
     color: #f8f8ff;
+    opacity: .9;
+}
+
+#next {
+    font-size: 25px;
+    float: left;
+    transition: all .5s;
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    color: #f8f8ff;
+    opacity: .9;
+}
+
+#up-next {
+    top: 7px;
+    left: 0;
+    position: relative;
+    width: 42px;
+    height: 42px;
+}
+
+#upnxt-ovrly {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    background: rgb(10, 10, 10);
     opacity: .7;
+    z-index: 10;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    padding: 5px 0 0 0;
+    color: #F8F8FF;
+}
+
+#upnxt-img {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 42px;
+    width: 42px;
+    z-index: 5;
+    opacity: .9;
 }
 
 #album {
@@ -483,11 +540,13 @@ progress[value]::-webkit-progress-value::before {
 .fa.fa-volume-off {
     font-size: 18px;
     margin: 25px 5px 0 0;
+    color: #F8F8FF;
 }
 
 .fa.fa-volume-up {
     font-size: 18px;
     margin: 25px 0 0 -20px;
+    color: #F8F8FF;
 }
 
 #searchbar {

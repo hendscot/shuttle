@@ -1,6 +1,8 @@
-<div class='container-fluid'>
-    <h1>{{_search.results}} results for {{_search.query}}</h1>
-    <h3><a href='#discover'>clear results</a></h3>
+<div id='container' class='container-fluid'>
+    <div class='jumbo jumbotron'>
+        <h1>{{_search.results}} results for {{_search.query}}</h1>
+        <h3><a href='#discover'>clear results</a></h3>
+    </div>
     <div ng-repeat='pod in _search.pods'>
         <div ng-if="$index % 6 == 0" class="clearfix row trans"></div>
         <div class="col-lg-2 col-md-4 col-sm-6">

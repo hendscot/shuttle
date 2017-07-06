@@ -30,6 +30,8 @@
     <script src="./app/components/search/searchController.js" type="text/javascript"></script>
     <script src="./app/components/search/searchBarController.js" type="text/javascript"></script>
     <script src="./app/components/search/searchService.js" type="text/javascript"></script>
+    <script src="./app/components/queue/queueController.js" type="text/javascript"></script>
+    <script src="./app/components/queue/queueService.js" type="text/javascript"></script>
     <!-- Bootstrap Core CSS -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="./assets/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -84,12 +86,7 @@
         </div>
     </nav>
     <!--MAIN ROUTING-->
-    <div class="container-fluid">
-        <div id='app-render'>
-            <div ng-view autoscroll='true'>
-            </div>
-
-        </div>
+    <div id='app-render' ng-view autoscroll='true'>
     </div>
     <!-- /.container-fluid -->
 
@@ -114,11 +111,23 @@
                 </div>
             </li>
         </ul>
-        <div id='notification'></div>
-        <ul class='nav navbar-nav navbar-right'>
+        <ul class='nav navbar-nav' ng-controller='queueController as _que'>
+            <li>
+                <div id='up-next'>
+                    <div id='upnxt-ovrly'>
+                        Up Next
+                    </div>
+                    <img id='upnxt-img' src='./assets/img/default.jpg'>
+                </div>
+            </li>
             <li>
                 <div id='play' ng-click='_player.play()' class='fa fa-play' state='off'></div>
             </li>
+            <li>
+                <div id='next' ng-click='_que.next()' class='fa fa-fast-forward'></div>
+            </li>
+        </ul>
+        <ul class='nav navbar-nav navbar-right'>
             <li><i class="fa fa-volume-off" aria-hidden="true"></i>
             </li>
             <li>

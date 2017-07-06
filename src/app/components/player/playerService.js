@@ -10,22 +10,15 @@
     var playBtn = 'fa fa-play';
     var pausBtn = 'fa fa-pause';
     angular.module('shuttle')
-        .service('playerService', [PlayerService]);
+        .service('playerService', ['queueService', PlayerService]);
 
-    function PlayerService() {
+    function PlayerService(queueService) {
         return {
             play: function() {
                 handleAudio();
             },
-            load: function(audioSrc, img, title, artist) {
-                stopAudio();
-                source.src = audioSrc;
-                album.src = img;
-                track.setAttribute('track', title);
-                track.setAttribute('artist', artist);
-                play.setAttribute('state', 'on')
-                player.load(source);
-                handleAudio();
+            load: function(pod) {
+                loadAudio(pod);
             },
             init: function() {
                 player = document.getElementById('player');
@@ -50,6 +43,9 @@
                 player.addEventListener('timeupdate', function() {
                     vis.update(player.currentTime, player.duration);
                 });
+                player.addEventListener('ended', function() {
+                    loadAudio(queueService.next());
+                })
                 setInterval(toggleText, 6000);
                 volBar.addEventListener('mousedown', function(e) {
                     console.log(player.volume = (e.offsetX / this.offsetWidth) * 1);
@@ -76,7 +72,37 @@
                 } else {
                     stopAudio();
                 }
+            } else {
+                play.setAttribute('state', 'on');
+                loadAudio(queueService.next());
             }
+        }
+
+        function loadAudio(pod) {
+            if (pod.source) {
+                stopAudio();
+                source.src = pod.source;
+                album.src = pod.albumArt;
+                track.setAttribute('track', pod.title);
+                track.innerHTML = pod.title;
+                track.setAttribute('artist', pod.artist);
+                play.setAttribute('state', 'on')
+                player.load(source);
+                handleAudio();
+            }
+            /*else {
+                           clearPlayer();
+                       }*/
+        }
+
+        function clearPlayer() {
+            stopAudio();
+            source.src = null;
+            album.src = './assets/img/default.jpg';
+            track.setAttribute('track', 'Nothing Selected');
+            track.setAttribute('artist', 'Select an Episode');
+            track.innerHTML = 'Nothing Selected';
+            play.setAttribute('state', 'off');
         }
 
         function startAudio() {

@@ -1,8 +1,8 @@
 (function() {
     angular.module('shuttle')
-        .controller('episodesController', ['episodesService', 'selectedService', 'playerService', '$q', EpisodesController])
+        .controller('episodesController', ['episodesService', 'selectedService', 'playerService', 'queueService', EpisodesController])
 
-    function EpisodesController(episodesService, selectedService, playerService) {
+    function EpisodesController(episodesService, selectedService, playerService, queueService) {
         let self = this;
         let body = document.getElementsByTagName('body')[0];
         self.uri = selectedService.getSelectedId();
@@ -27,7 +27,7 @@
                 self.index -= 5;
         }
         self.loadData = function() {
-            playerService.load(self.url, self.img, self.title, self.headTitle);
+            playerService.load({ source: self.url, albumArt: self.img, title: self.title, artist: self.headTitle });
         }
         self.remove = function() {
             episodesService.deleteEpisode(self.uri);
@@ -67,6 +67,9 @@
             $('#desc').text(desc);
             $('#head').text(self.title);
         };
+        self.queueData = function() {
+            queueService.enqueue({ source: self.url, albumArt: self.img, title: self.title, artist: self.headTitle });
+        }
     }
 
 })();
