@@ -103,9 +103,9 @@
                 <img id='album' src='./assets/img/default.jpg'>
             </li>
             <li>
+                <progress id='progress-bar'></progress>
                 <div class='track-stats'>
                     <p id='start-time' class='track-time'>0:00:00</p>
-                    <progress id='progress-bar'></progress>
                     <p id='end-time' class='track-time'>0:00:00</p>
                     <p id='track-text' track='Nothing Selected' artist='Select an episode'></p>
                 </div>
@@ -115,24 +115,11 @@
             <li>
                 <div id='up-next'>
                     <div id='upnxt-ovrly'>
-                        Up Next
+                        0 Queued
                     </div>
                     <img id='upnxt-img' src='./assets/img/default.jpg'>
-                </div>
-            </li>
-            <li>
-                <div id='play' ng-click='_player.play()' class='fa fa-play' state='off'></div>
-            </li>
-            <li>
-                <div id='next' ng-click='_que.next()' class='fa fa-fast-forward'></div>
-            </li>
-            <li>
-                <div id='q-info'>
-                    <div id='q-amnt'>
-                    </div>
-                    <div>
-                        pods in queue
-                    </div>
+                    <div id='play' ng-click='_player.play()' class='fa fa-play' state='off'></div>
+                    <div id='next' ng-click='_que.next()' class='fa fa-fast-forward'></div>
                 </div>
             </li>
         </ul>

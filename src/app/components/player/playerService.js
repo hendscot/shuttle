@@ -89,10 +89,10 @@
                 play.setAttribute('state', 'on')
                 player.load(source);
                 handleAudio();
+            } else {
+                //clearPlayer();
+                stopAudio();
             }
-            /*else {
-                           clearPlayer();
-                       }*/
         }
 
         function clearPlayer() {

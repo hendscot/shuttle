@@ -368,27 +368,29 @@ h3>a {
 
 #play {
     font-size: 25px;
-    float: left;
     transition: all .5s;
-    margin: 20px 15px 0 15px;
     cursor: pointer;
     color: #f8f8ff;
     opacity: .9;
+    position: relative;
+    top: 10px;
+    left: 60px;
 }
 
 #next {
     font-size: 25px;
-    float: left;
     transition: all .5s;
-    margin: 20px 0 0 0;
     cursor: pointer;
     color: #f8f8ff;
     opacity: .9;
+    position: relative;
+    top: -17px;
+    left: 100px;
 }
 
 #up-next {
     top: 7px;
-    left: 0;
+    left: 11em;
     position: relative;
     width: 42px;
     height: 42px;
@@ -466,7 +468,7 @@ progress {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #753a88, #cc2b2a);
     height: 6px;
-    width: 1318px;
+    width: 131.5rem;
     transition: all .3s;
     cursor: pointer;
     position: absolute;

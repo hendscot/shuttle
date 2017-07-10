@@ -12,7 +12,7 @@
                     queueImg.src = podObj.albumArt;
                 }
                 queue.push(podObj)
-                inQueue.innerHTML = queue.length;
+                inQueue.innerHTML = queue.length + ' Queued';
             },
             next: function() {
                 if (queue.length) {
@@ -24,7 +24,7 @@
                     } else {
                         queueImg.src = './assets/img/default.jpg';
                     }
-                    inQueue.innerHTML = queue.length;
+                    inQueue.innerHTML = queue.length + ' Queued';
                     return podObj;
                 } else {
                     return { source: null };

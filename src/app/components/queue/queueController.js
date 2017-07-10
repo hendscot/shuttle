@@ -5,7 +5,7 @@
     function QueueController(queueService, playerService) {
         let self = this;
         queueService.init(document.getElementById('upnxt-img'),
-            document.getElementById('q-amnt'));
+            document.getElementById('upnxt-ovrly'));
         self.next = function() {
             playerService.load(queueService.next());
         }
