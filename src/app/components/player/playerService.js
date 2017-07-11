@@ -62,6 +62,16 @@
                     volOvr.style.width = (((e.pageX - rect.left)) + 'px');
                 })
                 progress.addEventListener('click', seek);
+            },
+            rewind: function() {
+                console.log(player.currentTime)
+                player.currentTime = ((player.currentTime - 25) > 0) ? player.currentTime -= 25 : 0;
+                vis.update(player.currentTime, player.duration);
+            },
+            forward: function() {
+                console.log(player.currentTime)
+                player.currentTime = ((player.currentTime + 25) < player.duration) ? player.currentTime += 25 : player.duration;
+                vis.update(player.currentTime, player.duration);
             }
         }
 

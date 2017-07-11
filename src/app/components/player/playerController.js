@@ -6,6 +6,8 @@
         var self = this;
         playerService.init();
         self.play = playerService.play;
+        self.back = playerService.rewind;
+        self.forward = playerService.forward;
     }
 
 })();

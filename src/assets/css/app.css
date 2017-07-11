@@ -373,8 +373,8 @@ h3>a {
     color: #f8f8ff;
     opacity: .9;
     position: relative;
-    top: 10px;
-    left: 60px;
+    top: -18px;
+    left: 75px;
 }
 
 #next {
@@ -384,13 +384,35 @@ h3>a {
     color: #f8f8ff;
     opacity: .9;
     position: relative;
-    top: -17px;
-    left: 100px;
+    top: -71px;
+    left: 135px;
+}
+
+#skip {
+    font-size: 25px;
+    transition: all .5s;
+    cursor: pointer;
+    color: #f8f8ff;
+    opacity: .9;
+    position: relative;
+    top: -45px;
+    left: 108px;
+}
+
+#rewind {
+    font-size: 25px;
+    transition: all .5s;
+    cursor: pointer;
+    color: #f8f8ff;
+    opacity: .9;
+    position: relative;
+    top: 8px;
+    left: 35px;
 }
 
 #up-next {
     top: 7px;
-    left: 11em;
+    left: 8em;
     position: relative;
     width: 42px;
     height: 42px;
@@ -398,7 +420,7 @@ h3>a {
 
 #upnxt-ovrly {
     top: 0;
-    left: 0;
+    left: 180px;
     position: absolute;
     height: 42px;
     width: 42px;
@@ -414,7 +436,7 @@ h3>a {
 
 #upnxt-img {
     top: 0;
-    left: 0;
+    left: 180px;
     position: absolute;
     height: 42px;
     width: 42px;

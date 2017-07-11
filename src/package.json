@@ -1,36 +1,36 @@
 {
-  "name": "shuttle",
-  "version": "0.0.8",
-  "license": "MIT",
-  "description": "Podcast Player",
-  "author": "Scott Henderson",
-  "main": "main.js",
-  "scripts": {
-    "start": "electron .",
-    "postinstall": "install-app-deps",
-    "pack": "build --dir",
-    "dist": "build"
-  },
-  "repository": "https://github.com/hendscot/shuttle",
-  "keywords": [
-    "podcast",
-    "minimalistic",
-    "stream"
-  ],
-  "build": {
-    "appId": "app.shuttle",
-    "asar": true,
-    "win": {
-      "target": "NSIS",
-      "icon": "build/rocket"
+    "name": "shuttle",
+    "version": "0.0.8",
+    "license": "MIT",
+    "description": "Podcast Player",
+    "author": "Scott Henderson",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "postinstall": "install-app-deps",
+        "pack": "build --dir",
+        "dist": "build"
+    },
+    "repository": "https://github.com/hendscot/shuttle",
+    "keywords": [
+        "podcast",
+        "minimalistic",
+        "stream"
+    ],
+    "build": {
+        "appId": "app.shuttle",
+        "asar": true,
+        "win": {
+            "target": "NSIS",
+            "icon": "../build/rocket"
+        }
+    },
+    "dependencies": {
+        "npr-one-sdk": "^1.4.0",
+        "sql.js": "^0.4.0"
+    },
+    "devDependencies": {
+        "electron": "latest",
+        "electron-builder": "^19.8.0"
     }
-  },
-  "dependencies": {
-    "npr-one-sdk": "^1.4.0",
-    "sql.js": "^0.4.0"
-  },
-  "devDependencies": {
-    "electron": "latest",
-    "electron-builder": "^19.8.0"
-  }
 }

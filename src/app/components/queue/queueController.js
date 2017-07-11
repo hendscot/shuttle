@@ -7,7 +7,10 @@
         queueService.init(document.getElementById('upnxt-img'),
             document.getElementById('upnxt-ovrly'));
         self.next = function() {
-            playerService.load(queueService.next());
+            let nextPod = queueService.next();
+            if (nextPod.source) {
+                playerService.load(nextPod);
+            }
         }
     }
 })();
