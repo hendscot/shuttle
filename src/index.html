@@ -49,41 +49,39 @@
 
     <!-- Navigation -->
     <nav ng-controller='navigationController as _nav' id='top-bar' class="navbar navbar-default navbar-fixed-top">
-        <div class='collapse navbar-collapse'>
-            <ul class='nav navbar-nav'>
-                <li>
-                    <div class='nav-wd act'>
-                        <a href='#'><span id='library' ng-click='_nav.select($event)' >Library</a></span>
-                    </div>
-                </li>
-                <li>
-                    <div class='nav-wd deact'>
-                        <a href='#discover'><span id='discover' ng-click='_nav.select($event)' >Discover</span></a>
-                    </div>
-                </li>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right" ng-controller='searchBarController as _searchBar'>
-                <div id='srch' class="col-sm-3 col-md-3">
-                    <form id='searchsend' ng-submit='_searchBar.search()' class="navbar-form" role="search">
-                        <div class="input-group">
-                            <input id='searchbar' ng-model='_searchBar.query' type="text" class="form-control" placeholder='search'>
-                            <div class="input-group-btn">
-                                <div id='search-btn' class="btn btn-default" ng-click='_searchBar.search()' type="submit"><i class="fa fa-rocket"></i></div>
-                            </div>
-                        </div>
-                    </form>
+        <ul class='nav navbar-nav'>
+            <li>
+                <div class='nav-wd act'>
+                    <a href='#'><span id='library' ng-click='_nav.select($event)' >Library</a></span>
                 </div>
-                <li>
-                    <div id='close-btn' class="fa fa-window-close" ng-click='_nav.close()' aria-hidden="true"></div>
-                </li>
+            </li>
+            <li>
+                <div class='nav-wd deact'>
+                    <a href='#discover'><span id='discover' ng-click='_nav.select($event)' >Discover</span></a>
+                </div>
+            </li>
 
-                <li>
-                    <div id='min-btn' class="fa fa-window-minimize" ng-click='_nav.min()' aria-hidden="true"></div>
-                </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" ng-controller='searchBarController as _searchBar'>
+            <div id='srch' class="col-sm-3 col-md-3">
+                <form id='searchsend' ng-submit='_searchBar.search()' class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input id='searchbar' ng-model='_searchBar.query' type="text" class="form-control" placeholder='search'>
+                        <div class="input-group-btn">
+                            <div id='search-btn' class="btn btn-default" ng-click='_searchBar.search()' type="submit"><i class="fa fa-rocket"></i></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <li>
+                <div id='close-btn' class="fa fa-window-close" ng-click='_nav.close()' aria-hidden="true"></div>
+            </li>
 
-            </ul>
-        </div>
+            <li>
+                <div id='min-btn' class="fa fa-window-minimize" ng-click='_nav.min()' aria-hidden="true"></div>
+            </li>
+
+        </ul>
     </nav>
     <!--MAIN ROUTING-->
     <div id='app-render' ng-view autoscroll='true'>

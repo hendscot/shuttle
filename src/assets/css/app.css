@@ -109,6 +109,7 @@ h3>a {
     border-bottom-style: solid;
     transition: all .5s;
     color: #FFFFFF;
+    font-weight: lighter;
 }
 
 .nav-wd a {
@@ -178,12 +179,11 @@ h3>a {
 
 .card.discover {
     border: thick #000000;
-    box-shadow: 3px 2px 2px #9A9A9A;
     width: 19rem;
     display: inline-block;
     margin: 30px 25px 20px 0;
     padding: 0 0 15px 0;
-    background-color: #FFFFFF;
+    background-color: rgba(205, 205, 205, 1);
 }
 
 .card.library {
@@ -203,7 +203,7 @@ h3>a {
 }
 
 .card-block {
-    background-color: #FFFFFF;
+    background-color: rgba(205, 205, 205, 1);
 }
 
 .card-cont {
@@ -228,8 +228,8 @@ h3>a {
 }
 
 #close-btn {
-    position: absolute;
-    left: 838px;
+    position: relative;
+    left: 100rem;
     top: -35px;
     color: #EFEFEF;
     font-size: 15px;
@@ -237,10 +237,10 @@ h3>a {
 }
 
 #min-btn {
-    left: -absolute;
+    left: 25px;
     position: relative;
     top: -40px;
-    left: 810px;
+    left: 95rem;
     color: #EFEFEF;
     font-size: 15px;
     cursor: pointer;
@@ -562,15 +562,17 @@ progress[value]::-webkit-progress-value::before {
 
 #searchbar {
     height: 25px;
-    position: absolute;
-    left: -250px;
+    position: relative;
+    left: -150px;
     width: 150px;
 }
 
 #search-btn {
     height: 25px;
-    position: absolute;
-    left: -100px;
+    position: relative;
+    left: -150px;
+    padding: 2px 0 1px 0;
+    width: 35px;
 }
 
 #search:focus {
